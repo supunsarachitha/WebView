@@ -2,24 +2,69 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    string currentUrl = "";
+    public MainPage()
+    {
+        InitializeComponent();
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+        var current = Connectivity.NetworkAccess;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+        if (current != NetworkAccess.Internet)
+        {
+            DisplayAlert("", "No Internet Connection", "Ok");
+            return;
+        }
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+        wbview.Source = "https://syndi365.info/";
+    }
+
+    private void WebView_Navigating(object sender, WebNavigatingEventArgs e)
+    {
+        busyIndi.IsVisible = true;
+    }
+
+    private void WebView_Navigated(object sender, WebNavigatedEventArgs e)
+    {
+        currentUrl = e.Url;
+        busyIndi.IsVisible = false;
+    }
+
+    protected override bool OnBackButtonPressed()
+    {
+
+        if (wbview.CanGoBack)
+        {
+            wbview.GoBack();
+            return true;
+        }
+
+        else
+        {
+
+            if (currentUrl.Contains("https://syndi365.info/"))
+            {
+                Dispatcher.Dispatch(async () => {
+                    bool a = await DisplayAlert("", "Exit?", "Ok", "Cancel");
+                    if (a)
+                    {
+                        System.Environment.Exit(0);
+                    }
+
+                });
+                return true;
+            }
+            else
+            {
+                wbview.Source = "https://syndi365.info/";
+                return true;
+            }
+
+        }
+
+
+    }
+
+
 }
-
 

@@ -1,4 +1,31 @@
 ﻿<Properties StartupConfiguration="{00A0A9D8-ED54-4975-9A99-17729E7445A2}|Default">
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.1.99.61" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebView/AppShell.xaml">
+    <Files>
+      <File FileName="WebView/MainPage.xaml" Line="4" Column="40" />
+      <File FileName="WebView/AppShell.xaml" Line="7" Column="66" />
+      <File FileName="WebView/MainPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="WebView/MauiProgram.cs" Line="1" Column="1" />
+      <File FileName="WebView/App.xaml" Line="1" Column="1" />
+      <File FileName="WebView/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="WebView/AppShell.xaml.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebView" expanded="True">
+            <Node name="WebView" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.WebView FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.WebView PreferredExecutionTarget="Android.Pixel_2_Android_S" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_2_Android_S" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
